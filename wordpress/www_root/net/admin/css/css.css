@@ -1,0 +1,138 @@
+body {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #18191a;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #1c1e21;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #1c1e21;
+}
+
+.bg-black-alt {
+    background: #18191a;
+}
+
+.text-black-alt {
+    color: #191919;
+}
+
+.border-black-alt {
+    border-color: #191919;
+}
+
+.text-gray-600 {
+    --tw-text-opacity: 1;
+    color: #03DAC6;
+}
+
+.text-gray-100 {
+    --tw-text-opacity: 1;
+    color: #BB86FC;
+}
+
+.text-gray-400 {
+    --tw-text-opacity: 1;
+    /* color: rgba(156,163,175,var(--tw-text-opacity)); */
+    color: #BB86FC;
+}
+
+.pb-1 {
+    padding-bottom: .25rem;
+    color: #BB86FC;
+}
+
+.text-blue-400 {
+    --tw-text-opacity: 1;
+    color: #BB86FC;
+}
+
+.fa-inverse {
+    color: #BB86FC;
+}
+
+.bg-gray-900 {
+    --tw-bg-opacity: 1;
+    background-color: #1c1e21;
+    border-color: #1c1e21;
+}
+
+.bg-600 {
+    --tw-bg-opacity: 1;
+    background-color: #18191a!important;
+}
+
+.foot {
+    text-align: center!important;
+}
+
+.border-gray-900 {
+    color: #1c1e21;
+}
+
+input {
+    background-color: #1c1e21;
+    border: none;
+    border-bottom: 2px solid #03DAC6;
+    color: #03DAC6;
+    outline: none;
+    width: 200px;
+    padding: 5px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 17px;
+    -webkit-text-security: square;
+}
+
+input:hover {
+    border-bottom: 2px solid #BB86FC;
+    color: #BB86FC;
+}
+
+.waviy {
+    position: relative;
+    text-align: center!important;
+}
+
+.waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    color: #BB86FC;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+}
+
+@keyframes flip {
+    0%,
+    80% {
+        transform: rotateY(360deg)
+    }
+}

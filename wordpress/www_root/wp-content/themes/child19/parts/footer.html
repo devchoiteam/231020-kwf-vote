@@ -1,0 +1,351 @@
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
+	/* @keyframes fadeIn { */
+  /* 0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+	/* html { */
+		/* -webkit-animation: fadeIn 1s 1s linear alternate;
+    -moz-animation: fadeIn 1s 1s linear alternate;
+    -ms-animation: fadeIn 1s 1s linear alternate;
+    -o-animation: fadeIn 1s 1s linear alternate;
+    animation: fadeIn 1s 1s linear alternate; */
+		/* animation: fadeIn 4s 1s infinite linear alternate; */
+/* } */
+	/* .wp-site-blocks {
+		opacity: 0;
+	} */
+
+	.show-mobile {
+		display: none;
+	}
+
+	.show-pc {
+		display: block;
+	}
+
+	body {
+		font-family: 'Titillium Web', sans-serif;
+		color: #555555;
+		font-weight: 600;
+		font-size: 16px;
+		--wp--style--global--wide-size: 1920px;
+	}
+
+	.wp-site-blocks {
+		padding: 0;
+	}
+
+	[onclick^=""],
+	[onclick^="selectTabMenu("],
+	[onclick^="transPage("],
+	[onclick^="change"],
+	[onclick^="l"],
+	[onclick^="g"],
+	[onclick^="w"] {
+		cursor: pointer;
+	}
+
+	header {
+		width: 100%;
+		position: sticky;
+		top: 0;
+		background: white;
+		margin: 0 !important;
+		z-index: 999;
+	}
+	header .header-mobile {
+			display: none;
+		}
+	.wp-block-group {
+		margin-top: 0 !important;
+	}
+
+	.header {
+		display: flex;
+		padding: 1rem 0 .5rem 0;
+		line-height: 3rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.header .block-logo {
+		flex: 2;
+		padding-left: 2rem;
+	}
+
+	.header .block-navigation {
+		flex: 3;
+		text-align: center;
+		display: flex;
+	}
+
+	.header .block-navigation .tab {
+		flex: 1;
+		font-size: 1.2rem;
+	}
+
+	.header .block-navigation .tab:hover {
+		color: #00B1ED;
+		opacity: .5;
+		cursor: pointer;
+	}
+
+	.header .block-navigation .tab.active {
+		color: #00B1ED;
+	}
+
+	.header .block-translate {
+		flex: 2;
+		text-align: right;
+		padding-right: 1rem;
+	}
+
+	.header .block-translate .trans-kor,
+	.header .block-translate .trans-jpn {
+		border: #00B1ED;
+		color: #00B1ED;
+		border-radius: 3rem;
+	}
+
+	.header .trans {
+		color: #C4C4C4;
+		font-size: .8rem;
+		padding: .5rem;
+
+
+	}
+
+	.header .trans.active {
+		background-color: #00B1ED;
+		border-radius: 3rem;
+		color: white;
+	}
+
+	.board-wrap {
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
+	}
+
+	.board-wrap .board {
+		width: 100%;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.main-company .sub-nav-wrap {
+		background-color: #E0F6FD;
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
+
+	}
+
+	.main-company .sub-nav-wrap .sub-nav {
+		/* background-color: #E0F6FD; */
+		width: 100%;
+		max-width: 1000px;
+		display: flex;
+		margin: 0 auto;
+	}
+
+	.main-company .banner-wrap {
+		position: relative;
+	}
+
+	.main-company .banner-wrap:before {
+		position: absolute;
+		font-size: 3rem;
+		color: white;
+		text-align: center;
+		width: 100%;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+	.main-event .banner-wrap:before {
+		transform: translate(-50%, -50%);
+	}
+	.banner-wrap.banner-notice:before {
+		content: 'NOTICE'
+	}
+
+	.banner-wrap.banner-event:before {
+		content: 'EVENT'
+	}
+
+	.mb-board .mb-disabled,
+	.mb-board .mb-disabled span,
+	.mb-board .mb-disabled img {
+		/* display: none;  */
+		cursor: pointer;
+	}
+
+	main .banner img {
+		width: 100%;
+	}
+
+	.title {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.block-body  .title {
+		margin: .5rem 0;
+	}
+	.img-mobile {
+		display: none;
+	}
+
+	.ja .lang-ko {
+		display: none !important;
+	}
+
+	.ko .lang-ja {
+		display: none !important;
+	}
+
+	.btn-start,
+	.btn-end {
+		display: none;
+	}
+
+	#notice_pagination_box .btn-page:not(.active) .a,
+	#event_pagination_box .btn-page:not(.active) .a {
+		color: #C4C4C4 !important;
+	}
+
+	.mb-board .pagination-large td.btn-page a {
+		background: none;
+	}
+
+	footer {
+		height: 8rem;
+		position: relative;
+		/* transform : translateY(-100%); */
+	}
+
+	main.main {
+		height: auto;
+		min-height: calc(100vh - 18rem);
+		/* padding-bottom: 8rem */
+	}
+
+	.sub-wrap.clone .wrap:hover {
+		background: #E0F6FD;
+	}
+
+	.border-radius-sm {
+		border-radius: 0.5rem;
+	}
+</style>
+
+<div class="header header-pc">
+	<div class="block-logo" onclick="go()">
+		<img src="/wp-content/uploads/dsent-header-logo.png" style="width: 47%;"/>
+	</div>
+	<div class="block-navigation">
+		<div class="tab company" onclick="go('company')">COMPANY</div>
+		<div class="tab notice" onclick="go('notice')">NOTICE</div>
+		<div class="tab event" onclick="go('event')">EVENT</div>
+	</div>
+	<div class="block-translate">
+		<span class="trans trans-ko" onclick="transPage('ko')">KOR</span>
+		<span class="trans trans-ja" onclick="transPage('ja')">JPN</span>
+	</div>
+</div>
+<div class="header header-mobile" type="hambuger">
+	<div class="block-logo" onclick="go()">
+		<img src="/wp-content/uploads/dsent-header-logo.png"/>
+	</div>
+
+	<div class="block-right mobile-menu-bar">
+		<img class="mobile-menu-btn menu-hambuger" onclick="toggleMenu('close')"
+			src="/wp-content/uploads/dsent-menubar.png" />
+		<img class="mobile-menu-btn menu-close" onclick="toggleMenu('hambuger')"
+			src="/wp-content/uploads/dsent-plus.png" />
+	</div>
+	<div class="block-navigation">
+		<nav class='mobile-menu-wrap animated bounceInDown'>
+			<ul class="ul">
+
+				<li class="li" class='sub-menu'>
+					<div class="a" style="padding: 0; display: flex;">
+						<div style="flex: 10; padding-left: 1rem;" onclick="go('company')">
+							<span  style="padding-right:65%">COMPANY</span>
+						</div>
+						<div class='fa fa-caret-down right' style="flex: 2;">
+							<img class="up-icon" onclick="toggleSubmenu(this);return false;"
+								src="/wp-content/uploads/dsent-up.png" />
+						</div>
+					</div>
+					<ul class="ul">
+						<li class="li" onclick="go('daesung')">
+							<a class="a">DAESUNG</a>
+						</li>
+						<li class="li">
+							<a class="a" onclick="go('sayufan')">SAY U FAN</a>
+						</li>
+					</ul>
+				</li>
+				<li class="li">
+					<a class="a" onclick="go('notice')">NOTICE</a>
+				</li>
+				<li class="li" class='sub-menu'>
+					<div class="a" style="padding: 0; display: flex;">
+						<div style="flex: 10; padding-left: 1rem;" onclick="go('event')" >
+							<span style="padding-right:65%">EVENT</span>
+						</div>
+						<div class='fa fa-caret-down right' style="float: right; flex: 2;">
+							<img class="up-icon" onclick="toggleSubmenu(this);return false;"
+								src="/wp-content/uploads/dsent-up.png" />
+						</div>
+					</div>
+					<ul class="ul">
+						<li class="li">
+							<a class="a" onclick="go('event')">진행 중인 이벤트</a>
+						</li>
+						<li class="li">
+							<a class="a" onclick="go('event/finish')">종료 된 이벤트</a>
+						</li>
+					</ul>
+				</li>
+				<li class="li">
+
+					<div class="block-translate">
+						<span class="trans trans-ko" onclick="transPage('ko')">KOR</span>
+						<span class="trans trans-ja" onclick="transPage('ja')">JPN</span>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+<script>
+	let href = window.location.href;
+	let lang = window.location.pathname.split('/')[1];
+	document.querySelector('.trans-' + lang).classList.add('active');
+	document.querySelector('.header-mobile .trans-' + lang).classList.add('active');
+
+	// 번역 언어 변경
+	function transPage(slug) {
+		window.location = href.replace(/ko|ja/i, slug);
+	}
+
+	// 페이지 이동
+	function go(page = null) {
+		window.location = page == null
+			? window.location.origin + '/' + lang
+			: window.location.origin + '/' + lang + '/' + page;
+	}
+</script>

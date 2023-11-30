@@ -1,0 +1,40 @@
+
+# # BEGIN SubDomain Multisite Content
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# # add a trailing slash to /wp-admin
+RewriteRule ^wp-admin$ wp-admin/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^(wp-(content|admin|includes).*) $1 [L]
+RewriteRule ^(.*\.php)$ $1 [L]
+RewriteRule . index.php [L]
+# # END SubDomain Multisite Content
+<IfModule mod_security.c> 
+SecFilterEngine Off 
+SecFilterScanPOST Off 
+</IfModule>
+# BEGIN WordPress
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteBase /
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /index.php [L]
+# </IfModule>
+
+# # if not https
+RewriteCond %{HTTPS} off
+
+# # and not wp-admin, etc
+# RewriteCond %{REQUEST_URI} !^/wp-admin [NC]
+# RewriteCond %{REQUEST_URI} !^/wp-login.php [NC]
+
+# # redirect to https 
+# RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
+# # END WordPress

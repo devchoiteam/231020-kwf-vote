@@ -1,0 +1,16 @@
+/*
+Theme Name:   2023KWF
+Theme URI:    http://2023kwf.com/child23/
+Description:  Twenty Nineteen Child Theme
+Author:       DevChoi
+Author URI:   http://2023kwf.com
+Template:     twentynineteen
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Tags:         entertainment
+Text Domain:  twentyNineteenchild
+*/
+:root {
+    color: black;
+    font-family: 'Titillium Web', sans-serif;
+}
